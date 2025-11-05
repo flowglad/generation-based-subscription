@@ -1,0 +1,326 @@
+isDefault: false
+name: "AI Image Generation Subscription"
+features:
+  - type: "usage_credit_grant"
+    slug: "basic-fast-generations"
+    name: "200 Fast Generations"
+    description: "Limited generations (~200 images per month)"
+    amount: 200
+    renewalFrequency: "every_billing_period"
+    active: true
+    usageMeterSlug: "fast-generations"
+  - type: "usage_credit_grant"
+    slug: "standard-fast-generations"
+    name: "360 Fast Generations"
+    description: "360 fast generations per month"
+    amount: 360
+    renewalFrequency: "every_billing_period"
+    active: true
+    usageMeterSlug: "fast-generations"
+  - type: "usage_credit_grant"
+    slug: "pro-fast-generations"
+    name: "750 Fast Generations"
+    description: "750 fast generations per month"
+    amount: 750
+    renewalFrequency: "every_billing_period"
+    active: true
+    usageMeterSlug: "fast-generations"
+  - type: "usage_credit_grant"
+    slug: "mega-fast-generations"
+    name: "900+ Fast Generations"
+    description: "900+ fast generations per month"
+    amount: 900
+    renewalFrequency: "every_billing_period"
+    active: true
+    usageMeterSlug: "fast-generations"
+  - type: "usage_credit_grant"
+    slug: "standard-hd-video-minutes"
+    name: "30 HD Video Minutes"
+    description: "30 minutes of HD video generation per month"
+    amount: 30
+    renewalFrequency: "every_billing_period"
+    active: true
+    usageMeterSlug: "hd-video-minutes"
+  - type: "usage_credit_grant"
+    slug: "pro-hd-video-minutes"
+    name: "60 HD Video Minutes"
+    description: "60 minutes of HD video generation per month"
+    amount: 60
+    renewalFrequency: "every_billing_period"
+    active: true
+    usageMeterSlug: "hd-video-minutes"
+  - type: "usage_credit_grant"
+    slug: "mega-hd-video-minutes"
+    name: "120 HD Video Minutes"
+    description: "120 minutes of HD video generation per month"
+    amount: 120
+    renewalFrequency: "every_billing_period"
+    active: true
+    usageMeterSlug: "hd-video-minutes"
+  - type: "toggle"
+    slug: "3d-video-generation"
+    name: "3D Video Generation"
+    description: "Generate 3D videos"
+    active: true
+  - type: "toggle"
+    slug: "general-commercial-terms"
+    name: "General Commercial Terms"
+    description: "Commercial usage rights"
+    active: true
+  - type: "toggle"
+    slug: "optional-credit-top-ups"
+    name: "Optional Credit Top Ups"
+    description: "Purchase additional credits as needed"
+    active: true
+  - type: "toggle"
+    slug: "relax-mode-included"
+    name: "Relax Mode Included"
+    description: "Access to Relax mode generation"
+    active: true
+  - type: "toggle"
+    slug: "unlimited-relaxed-images"
+    name: "Unlimited Relaxed Image Generations"
+    description: "Unlimited image generation in Relax mode"
+    active: true
+  - type: "toggle"
+    slug: "unlimited-relaxed-sd-video"
+    name: "Unlimited Relaxed Image and SD Video"
+    description: "Unlimited Relax mode images and SD video"
+    active: true
+  - type: "toggle"
+    slug: "stealth-mode"
+    name: "Stealth Mode"
+    description: "Keep your images and videos private"
+    active: true
+  - type: "toggle"
+    slug: "use-within-upgraded-images"
+    name: "Use Within Upgraded Images"
+    description: "Use within upgraded images"
+    active: true
+products:
+  - product:
+      name: "Basic"
+      description: "$10/mo + ~200 fast generations + 3D video"
+      active: true
+      default: false
+      slug: "basic-monthly"
+    prices:
+      - intervalUnit: "month"
+        name: "Basic Plan (Monthly)"
+        intervalCount: 1
+        type: "subscription"
+        isDefault: true
+        unitPrice: 1000
+        usageEventsPerUnit: null
+        active: true
+        slug: "basic-monthly"
+        usageMeterId: null
+    features:
+      - "basic-fast-generations"
+      - "3d-video-generation"
+      - "general-commercial-terms"
+      - "optional-credit-top-ups"
+      - "relax-mode-included"
+      - "use-within-upgraded-images"
+  - product:
+      name: "Basic"
+      description: "$96/yr + ~200 fast generations + 3D video"
+      active: true
+      default: false
+      slug: "basic-yearly"
+    prices:
+      - intervalUnit: "year"
+        name: "Basic Plan (Yearly)"
+        intervalCount: 1
+        type: "subscription"
+        isDefault: true
+        unitPrice: 9600
+        usageEventsPerUnit: null
+        active: true
+        slug: "basic-yearly"
+        usageMeterId: null
+    features:
+      - "basic-fast-generations"
+      - "3d-video-generation"
+      - "general-commercial-terms"
+      - "optional-credit-top-ups"
+      - "relax-mode-included"
+      - "use-within-upgraded-images"
+  - product:
+      name: "Free Plan"
+      active: true
+      default: true
+      slug: "free"
+    prices:
+      - intervalUnit: "month"
+        name: "Free Plan"
+        intervalCount: 1
+        type: "subscription"
+        isDefault: true
+        unitPrice: 0
+        usageEventsPerUnit: null
+        active: true
+        slug: "free"
+        usageMeterId: null
+    features: []
+  - product:
+      name: "Mega"
+      description: "$120/mo + 900+ fast generations + 120 min HD video + Stealth"
+      active: true
+      default: false
+      slug: "mega-monthly"
+    prices:
+      - intervalUnit: "month"
+        name: "Mega Plan (Monthly)"
+        intervalCount: 1
+        type: "subscription"
+        isDefault: true
+        unitPrice: 12000
+        usageEventsPerUnit: null
+        active: true
+        slug: "mega-monthly"
+        usageMeterId: null
+    features:
+      - "mega-fast-generations"
+      - "mega-hd-video-minutes"
+      - "general-commercial-terms"
+      - "optional-credit-top-ups"
+      - "relax-mode-included"
+      - "unlimited-relaxed-sd-video"
+      - "stealth-mode"
+      - "use-within-upgraded-images"
+  - product:
+      name: "Mega"
+      description: "$1,152/yr + 900+ fast generations + 120 min HD video + Stealth"
+      active: true
+      default: false
+      slug: "mega-yearly"
+    prices:
+      - intervalUnit: "year"
+        name: "Mega Plan (Yearly)"
+        intervalCount: 1
+        type: "subscription"
+        isDefault: true
+        unitPrice: 115200
+        usageEventsPerUnit: null
+        active: true
+        slug: "mega-yearly"
+        usageMeterId: null
+    features:
+      - "mega-fast-generations"
+      - "mega-hd-video-minutes"
+      - "general-commercial-terms"
+      - "optional-credit-top-ups"
+      - "relax-mode-included"
+      - "unlimited-relaxed-sd-video"
+      - "stealth-mode"
+      - "use-within-upgraded-images"
+  - product:
+      name: "Pro"
+      description: "$60/mo + 750 fast generations + 60 min HD video + Stealth"
+      active: true
+      default: false
+      slug: "pro-monthly"
+    prices:
+      - intervalUnit: "month"
+        name: "Pro Plan (Monthly)"
+        intervalCount: 1
+        type: "subscription"
+        isDefault: true
+        unitPrice: 6000
+        usageEventsPerUnit: null
+        active: true
+        slug: "pro-monthly"
+        usageMeterId: null
+    features:
+      - "pro-fast-generations"
+      - "pro-hd-video-minutes"
+      - "general-commercial-terms"
+      - "optional-credit-top-ups"
+      - "relax-mode-included"
+      - "unlimited-relaxed-sd-video"
+      - "stealth-mode"
+      - "use-within-upgraded-images"
+  - product:
+      name: "Pro"
+      description: "$576/yr + 750 fast generations + 60 min HD video + Stealth"
+      active: true
+      default: false
+      slug: "pro-yearly"
+    prices:
+      - intervalUnit: "year"
+        name: "Pro Plan (Yearly)"
+        intervalCount: 1
+        type: "subscription"
+        isDefault: true
+        unitPrice: 57600
+        usageEventsPerUnit: null
+        active: true
+        slug: "pro-yearly"
+        usageMeterId: null
+    features:
+      - "pro-fast-generations"
+      - "pro-hd-video-minutes"
+      - "general-commercial-terms"
+      - "optional-credit-top-ups"
+      - "relax-mode-included"
+      - "unlimited-relaxed-sd-video"
+      - "stealth-mode"
+      - "use-within-upgraded-images"
+  - product:
+      name: "Standard"
+      description: "$30/mo + 360 fast generations + 30 min HD video"
+      active: true
+      default: false
+      slug: "standard-monthly"
+    prices:
+      - intervalUnit: "month"
+        name: "Standard Plan (Monthly)"
+        intervalCount: 1
+        type: "subscription"
+        isDefault: true
+        unitPrice: 3000
+        usageEventsPerUnit: null
+        active: true
+        slug: "standard-monthly"
+        usageMeterId: null
+    features:
+      - "standard-fast-generations"
+      - "standard-hd-video-minutes"
+      - "general-commercial-terms"
+      - "optional-credit-top-ups"
+      - "relax-mode-included"
+      - "unlimited-relaxed-images"
+      - "use-within-upgraded-images"
+  - product:
+      name: "Standard"
+      description: "$288/yr + 360 fast generations + 30 min HD video"
+      active: true
+      default: false
+      slug: "standard-yearly"
+    prices:
+      - intervalUnit: "year"
+        name: "Standard Plan (Yearly)"
+        intervalCount: 1
+        type: "subscription"
+        isDefault: true
+        unitPrice: 28800
+        usageEventsPerUnit: null
+        active: true
+        slug: "standard-yearly"
+        usageMeterId: null
+    features:
+      - "standard-fast-generations"
+      - "standard-hd-video-minutes"
+      - "general-commercial-terms"
+      - "optional-credit-top-ups"
+      - "relax-mode-included"
+      - "unlimited-relaxed-images"
+      - "use-within-upgraded-images"
+usageMeters:
+  - name: "Fast Generations"
+    slug: "fast-generations"
+    aggregationType: "sum"
+  - name: "HD Video Minutes"
+    slug: "hd-video-minutes"
+    aggregationType: "sum"
