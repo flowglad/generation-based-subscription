@@ -93,6 +93,7 @@ jspm_packages/
 tmp/
 temp/
 
-# Lock files (keep pnpm-lock.yaml, ignore others)
+# Lock files
 package-lock.json
 yarn.lock
+pnpm-lock.yaml
