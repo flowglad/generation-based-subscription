@@ -1,13 +1,13 @@
-# Next.js Starter Template
+# Flowglad Example Project
 
-A production-ready Next.js starter template with BetterAuth, Flowglad, tRPC, and Drizzle ORM. Perfect for building full-stack applications with authentication, billing, and type-safe APIs.
+An example of how to integrate Flowglad into a Next.js project with BetterAuth. 
+This project demonstrates the "Generation-Based Subscription Template Pricing Model".
 
 ## Tech Stack
 
 - **[Next.js 16](https://nextjs.org)** - React framework with App Router
 - **[BetterAuth](https://www.better-auth.com)** - Modern authentication and user management
 - **[Flowglad](https://flowglad.com)** - Billing and subscription management
-- **[tRPC](https://trpc.io)** - End-to-end typesafe APIs
 - **[Drizzle ORM](https://orm.drizzle.team)** - PostgreSQL database with type-safe queries
 - **[TypeScript](https://www.typescriptlang.org)** - Type safety throughout
 - **[Tailwind CSS](https://tailwindcss.com)** - Utility-first CSS framework
@@ -17,7 +17,6 @@ A production-ready Next.js starter template with BetterAuth, Flowglad, tRPC, and
 
 - ✅ **Authentication** - Email/password authentication with BetterAuth
 - ✅ **Billing** - Subscription management with Flowglad
-- ✅ **Type-Safe APIs** - End-to-end type safety with tRPC
 - ✅ **Database** - PostgreSQL with Drizzle ORM migrations
 - ✅ **UI Components** - Pre-built shadcn/ui components
 - ✅ **TypeScript** - Full type safety across the stack
@@ -52,8 +51,8 @@ Fill in the required values in `.env.local`:
 - **`BETTER_AUTH_SECRET`** - Secret key for BetterAuth session encryption
   - Generate with: `openssl rand -base64 32`
   
-- **`FLOWGLAD_API_KEY`** - API key for Flowglad billing
-  - Get your API key from: [https://flowglad.com](https://flowglad.com)
+- **`FLOWGLAD_SECRET_KEY`** - Secret key for Flowglad billing
+  - Get your secret key from: [https://flowglad.com](https://flowglad.com)
 
 ### 3. Set Up Database
 
@@ -90,7 +89,7 @@ Open [http://localhost:3000](http://localhost:3000) to see the application.
 ```
 ├── src/
 │   ├── app/                 # Next.js App Router pages and routes
-│   │   ├── api/            # API routes (tRPC, BetterAuth, Flowglad)
+│   │   ├── api/            # API routes (BetterAuth, Flowglad)
 │   │   ├── sign-in/        # Sign in page
 │   │   └── sign-up/        # Sign up page
 │   ├── components/         # React components
@@ -100,19 +99,19 @@ Open [http://localhost:3000](http://localhost:3000) to see the application.
 │   │   ├── auth-client.ts # BetterAuth client
 │   │   └── flowglad.ts    # Flowglad configuration
 │   └── server/            # Server-side code
-│       ├── api/           # tRPC routers
 │       └── db/           # Database schema and client
 ├── drizzle/              # Generated database migrations
+├── pricing.yaml          # Flowglad pricing model configuration
 └── public/               # Static assets
 ```
 
 ## Authentication
 
-This template uses BetterAuth for authentication. Users can sign up and sign in with email/password. The authentication state is managed server-side with secure cookies.
+This project uses BetterAuth for authentication. Users can sign up and sign in with email/password. The authentication state is managed server-side with secure cookies.
 
 ## Billing
 
-Flowglad is integrated for subscription and billing management. The Flowglad provider is configured to work with BetterAuth sessions.
+Flowglad is integrated for subscription and billing management. The Flowglad provider is configured to work with BetterAuth sessions. The pricing model is defined in `pricing.yaml` at the root of the project, which includes subscription plans, usage meters, and features.
 
 ## Database
 

@@ -1,9 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getSessionCookie } from 'better-auth/cookies';
+import { auth } from '@/lib/auth';
 
 export async function middleware(request: NextRequest) {
-  const sessionCookie = getSessionCookie(request);
-
   // Allow access to auth routes and sign-in/sign-up pages
   if (
     request.nextUrl.pathname.startsWith('/api/auth') ||
@@ -13,8 +11,13 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // Protect all other routes
-  if (!sessionCookie) {
+  // Validate session using BetterAuth's session validation
+  const session = await auth.api.getSession({ 
+    headers: request.headers 
+  });
+
+  // Protect all other routes - redirect if no valid session
+  if (!session?.user) {
     return NextResponse.redirect(new URL('/sign-in', request.url));
   }
 

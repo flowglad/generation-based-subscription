@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Next.js Starter",
+  title: "gen-based subscription example",
   description: "Next.js starter template with BetterAuth and Flowglad",
 };
 
