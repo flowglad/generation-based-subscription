@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "Next.js starter template with BetterAuth and Flowglad",
   "private": true,
-  "packageManager": "pnpm@9.12.0",
+  "packageManager": "bun@1.2.14",
   "engines": {
     "node": ">=18.18.0"
   },
+  "preinstall": "bunx --bun only-allow bun",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
